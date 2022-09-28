@@ -2,7 +2,7 @@ import torch
 import torch.nn.functional as F
 from torch.optim import Adam
 
-from attacks.fast_gradient_method import fast_gradient_method
+from attacks.adversarial.whitebox.fast_gradient_method import fast_gradient_method
 from models.fcn import FcnNet
 import pandas as pd
 import numpy as np

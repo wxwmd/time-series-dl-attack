@@ -2,7 +2,7 @@
 import numpy as np
 import torch
 
-from attacks.utils import optimize_linear
+from attacks.adversarial.whitebox.utils import optimize_linear
 
 
 def fast_gradient_method(

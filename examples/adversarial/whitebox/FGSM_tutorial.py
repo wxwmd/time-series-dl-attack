@@ -1,9 +1,9 @@
 import numpy as np
 import torch
 
-from attacks.fast_gradient_method import fast_gradient_method
+from attacks.adversarial.whitebox.fast_gradient_method import fast_gradient_method
 from models.fcn import FcnNet
-from examples.utils import load_dataset,train,accuarcy
+from examples.adversarial.utils import load_dataset,train,accuarcy
 
 if __name__ == '__main__':
     dataset_name = 'SyntheticControl'

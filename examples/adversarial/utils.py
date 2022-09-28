@@ -3,7 +3,7 @@ import torch
 from torch.optim import Adam
 import torch.nn.functional as F
 
-DATASET_PATH = '../dataset/UCR/'
+DATASET_PATH = '../../../dataset/UCR'
 
 def load_dataset(dataset_name = 'SyntheticControl'):
     training_file_path = DATASET_PATH + '/' + dataset_name + '/' + dataset_name + '_TRAIN.tsv'
