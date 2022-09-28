@@ -1,9 +1,8 @@
-import numpy as np
 import torch
 
 from attacks.adversarial.blackbox.substitute_attack import substitute_attack
+from examples.adversarial.utils import load_dataset, train, accuarcy
 from models.fcn import FcnNet
-from examples.adversarial.utils import load_dataset,train,accuarcy
 
 if __name__ == '__main__':
     dataset_name = 'SyntheticControl'
