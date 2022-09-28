@@ -20,7 +20,7 @@ def hop_skip_jump_attack(
     clip_max=1,
 ):
     """
-    PyTorch implementation of HopSkipJumpAttack.
+    PyTorch's implementation of HopSkipJumpAttack.
     HopSkipJumpAttack was originally proposed by Chen, Jordan and Wainwright.
     It is a decision-based attack that requires access to output
     labels of a model alone.

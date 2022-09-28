@@ -18,6 +18,7 @@ def fast_gradient_method(
 ):
     """
     PyTorch's implementation of the Fast Gradient Method.
+    this method is used to attack classification models.
     :param model_fn: a callable that takes an input tensor and returns the models logits.
     :param x: input tensor.
     :param eps: epsilon (input variation parameter); see https://arxiv.org/abs/1412.6572.
