@@ -19,6 +19,7 @@ def fast_gradient_method(
     """
     PyTorch's implementation of the Fast Gradient Method.
     this method is used to attack classification models.
+    the example code can be found at examples/adversarial/whitebox/FGSM_tutorial.py
     :param model_fn: a callable that takes an input tensor and returns the models logits.
     :param x: input tensor.
     :param eps: epsilon (input variation parameter); see https://arxiv.org/abs/1412.6572.
@@ -106,8 +107,7 @@ def fast_gradient_method(
 
 def fast_gradient_regression_method(
     x,
-    y,
-    y_pred,
+    loss,
     eps,
     norm,
     clip_min=None,
@@ -118,17 +118,14 @@ def fast_gradient_regression_method(
     """
     PyTorch's implementation of the Fast Gradient Method.
     this method is used to attack regression models.
+    the example code can be found at examples/adversarial/whitebox/ts_regression.py
     :param model_fn: a callable that takes an input tensor and returns the models logits.
     :param x: input tensor.
+    :param loss: the loss of model(x)
     :param eps: epsilon (input variation parameter); see https://arxiv.org/abs/1412.6572.
     :param norm: Order of the norm (mimics NumPy). Possible values: np.inf, 1 or 2.
     :param clip_min: (optional) float. Minimum float value for adversarial example components.
     :param clip_max: (optional) float. Maximum float value for adversarial example components.
-    :param y: (optional) Tensor with true labels. If targeted is true, then provide the
-              target label. Otherwise, only provide this parameter if you'd like to use true
-              labels when crafting adversarial samples. Otherwise, models predictions are used
-              as labels to avoid the "label leaking" effect (explained in this paper:
-              https://arxiv.org/abs/1611.01236). Default is None.
     :param targeted: (optional) bool. Is the attacks targeted or untargeted?
               Untargeted, the default, will try to make the label incorrect.
               Targeted will instead try to move in the direction of being more like y.
@@ -171,8 +168,7 @@ def fast_gradient_regression_method(
 
     # x needs to be a leaf variable, of floating point type and have requires_grad being True for
     # its grad to be computed and stored properly in a backward call
-    x = x.clone().detach().to(torch.float).requires_grad_(True)
-
+    # x = x.clone().detach().to(torch.float).requires_grad_(True)
 
     # If attacks is targeted, minimize loss of target label rather than maximize loss of correct label
     if targeted:
