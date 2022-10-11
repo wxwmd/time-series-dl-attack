@@ -2,16 +2,27 @@
 
 ```
 time-series-dl-attack
-├─ README.md
-├─ main.py 
-├─ dataset 数据集
-│─ model 时序数据上的DL模型
-│      ├─ FCN
-│      └─ ResNet
-├─ attack 攻击算法目录
-│    ├─ fast_gradient_method (FGSM)
-│    ├─ uniform_noise 随机噪声
-│    └─ utils.py
-│ 
-└─ examples 所有攻击算法的示例
+│          
+├─attacks 攻击算法目录
+│  ├─adversarial 对抗攻击
+│  │  ├─blackbox   黑盒模型          
+│  │  └─whitebox   白盒模型
+│  │        
+│  └─privacy(TODO) 隐私攻击
+│          
+├─dataset 数据集
+│  ├─Google stocks   
+│  └─UCR
+│              
+├─examples 各个攻击示例
+│  ├─adversarial
+│  │  ├─blackbox
+│  │  └─whitebox
+│  │          
+│  └─privacy(TODO)
+│          
+└─models 时序数据上的DL模型
+    ├─ fcn
+    ├─ lstm
+    └─ resnet
 ```
