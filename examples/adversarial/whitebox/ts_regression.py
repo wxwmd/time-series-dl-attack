@@ -77,7 +77,7 @@ class Data:
 def main(config):
     np.random.seed(config.random_seed)  # 设置随机种子，保证可复现
     data_gainer = Data(config)
-    model = Net(config) # 如果是GPU训练， .to(device) 会把模型/数据复制到GPU显存中
+    model = Net(config)
 
     train_X, test_X, train_Y, test_Y = data_gainer.get_train_and_test_data()
     train_X, train_Y = torch.from_numpy(train_X).float(), torch.from_numpy(train_Y).float()
