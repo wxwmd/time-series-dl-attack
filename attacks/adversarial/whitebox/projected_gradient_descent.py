@@ -1,7 +1,7 @@
 import numpy as np
 import torch
 
-from attacks.adversarial.whitebox import fast_gradient_method
+from attacks.adversarial.whitebox.fast_gradient_method import fast_gradient_method
 from attacks.adversarial.whitebox.utils import clip_eta
 
 
