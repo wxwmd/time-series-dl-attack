@@ -1,7 +1,6 @@
-import numpy as np
 import torch
 
-from attacks.adversarial.blackbox.hot_skip_jump_attack import hop_skip_jump_attack
+from attacks.adversarial.cleverhans.blackbox.hot_skip_jump_attack import hop_skip_jump_attack
 from models.fcn import FcnNet
 from examples.adversarial.utils import load_dataset,train,accuarcy
 

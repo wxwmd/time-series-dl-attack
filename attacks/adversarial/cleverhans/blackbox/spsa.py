@@ -2,7 +2,7 @@
 import numpy as np
 import torch
 from torch import optim
-from attacks.adversarial.whitebox.utils import clip_eta
+from attacks.adversarial.cleverhans.whitebox.utils import clip_eta
 
 
 def spsa(

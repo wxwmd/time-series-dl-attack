@@ -1,6 +1,6 @@
 import torch
 
-from attacks.adversarial.whitebox.sparse_l1_descent import sparse_l1_descent
+from attacks.adversarial.cleverhans.whitebox.sparse_l1_descent import sparse_l1_descent
 from examples.adversarial.utils import load_dataset, train, accuarcy
 from models.fcn import FcnNet
 

@@ -1,8 +1,7 @@
 import torch
 import numpy as np
 
-from attacks.adversarial.whitebox.fast_gradient_method import fast_gradient_method
-from attacks.adversarial.whitebox.projected_gradient_descent import projected_gradient_descent
+from attacks.adversarial.cleverhans.whitebox.projected_gradient_descent import projected_gradient_descent
 
 from examples.adversarial.utils import load_dataset, train, accuarcy
 from models.fcn import FcnNet

@@ -2,8 +2,8 @@
 import numpy as np
 import torch
 
-from attacks.adversarial.whitebox.utils import optimize_linear
-from torch.utils.data import DataLoader, TensorDataset
+from attacks.adversarial.cleverhans.whitebox.utils import optimize_linear
+
 
 def fast_gradient_method(
     model_fn,

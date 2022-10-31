@@ -1,6 +1,6 @@
 import torch
 
-from attacks.adversarial.blackbox.substitute_attack import substitute_attack
+from attacks.adversarial.cleverhans.blackbox.substitute_attack import substitute_attack
 from examples.adversarial.utils import load_dataset, train, accuarcy
 from models.fcn import FcnNet
 

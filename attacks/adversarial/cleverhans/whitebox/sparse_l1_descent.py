@@ -2,7 +2,7 @@
 import numpy as np
 import torch
 
-from attacks.adversarial.whitebox.utils import zero_out_clipped_grads
+from attacks.adversarial.cleverhans.whitebox.utils import zero_out_clipped_grads
 
 
 def sparse_l1_descent(

@@ -1,7 +1,6 @@
-import numpy as np
 import torch
 
-from attacks.adversarial.whitebox.carlini_wagner_l2 import carlini_wagner_l2
+from attacks.adversarial.cleverhans.whitebox.carlini_wagner_l2 import carlini_wagner_l2
 from models.fcn import FcnNet
 from examples.adversarial.utils import load_dataset,train,accuarcy
 

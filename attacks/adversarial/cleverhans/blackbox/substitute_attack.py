@@ -12,7 +12,7 @@ import numpy as np
 import torch.nn.functional as F
 from torch.optim import Adam
 
-from attacks.adversarial.whitebox.fast_gradient_method import fast_gradient_method
+from attacks.adversarial.cleverhans.whitebox.fast_gradient_method import fast_gradient_method
 
 
 def train_substitute_model(target_model, substitute_model, train_x):

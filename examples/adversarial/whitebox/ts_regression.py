@@ -3,7 +3,7 @@ import pandas as pd
 import torch
 from sklearn.model_selection import train_test_split
 
-from attacks.adversarial.whitebox.fast_gradient_method import fast_gradient_regression_method
+from attacks.adversarial.cleverhans.whitebox.fast_gradient_method import fast_gradient_regression_method
 from models.lstm import train, Net
 
 

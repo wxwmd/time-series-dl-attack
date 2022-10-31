@@ -1,8 +1,8 @@
 import numpy as np
 import torch
 
-from attacks.adversarial.whitebox.fast_gradient_method import fast_gradient_method
-from attacks.adversarial.whitebox.utils import clip_eta
+from attacks.adversarial.cleverhans.whitebox.fast_gradient_method import fast_gradient_method
+from attacks.adversarial.cleverhans.whitebox.utils import clip_eta
 
 
 def projected_gradient_descent(
