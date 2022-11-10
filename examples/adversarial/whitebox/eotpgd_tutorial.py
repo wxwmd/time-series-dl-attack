@@ -2,7 +2,7 @@ import torch
 import torch.nn as nn
 import torch.utils.data as Data
 import torchvision
-from attacks.adversarial.torchattack.whitebox.mifsgm import MIFGSM
+from attacks.adversarial.torchattack.whitebox.eotpgd import EOTPGD
 
 from models.CNN import CNN
 
@@ -78,8 +78,8 @@ accuracy = (pred_y.data == test_y.data).sum() / test_y.shape[0]
 print('test accuracy: %.2f on clean data' % accuracy)
 
 # 使用deepfool攻击样本，验证精确度
-mifsgm = MIFGSM(cnn, eps=0.1)
-adv_x = mifsgm(test_x, test_y)
+tpgd = EOTPGD(cnn,eps=0.1)
+adv_x = tpgd(test_x, test_y)
 adv_output = cnn(adv_x)
 adv_pred_y = torch.max(adv_output, 1)[1]
 adv_accuracy = (adv_pred_y.data == test_y.data).sum() / test_y.shape[0]

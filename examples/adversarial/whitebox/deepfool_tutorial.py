@@ -17,14 +17,14 @@ device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
 
 # 下载mnist手写数据集
 train_data = torchvision.datasets.MNIST(
-    root='./data/',  # 保存或提取的位置  会放在当前文件夹中
+    root='../../../dataset/',  # 保存或提取的位置  会放在当前文件夹中
     train=True,  # true说明是用于训练的数据，false说明是用于测试的数据
     transform=torchvision.transforms.ToTensor(),  # 转换PIL.Image or numpy.ndarray
     download=DOWNLOAD_MNIST,  # 已经下载了就不需要下载了
 )
 
 test_data = torchvision.datasets.MNIST(
-    root='./data/',
+    root='../../../dataset/',
     train=False  # 表明是测试集
 )
 
