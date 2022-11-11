@@ -2,7 +2,7 @@ import torch
 
 from attacks.adversarial.cleverhans.blackbox.hot_skip_jump_attack import hop_skip_jump_attack
 from models.fcn import FcnNet
-from examples.adversarial.utils import load_dataset,train,accuarcy
+from examples.utils import load_dataset,train,accuarcy
 
 if __name__ == '__main__':
     dataset_name = 'SyntheticControl'

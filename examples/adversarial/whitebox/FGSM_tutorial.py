@@ -3,7 +3,7 @@ import torch
 
 from attacks.adversarial.cleverhans.whitebox.fast_gradient_method import fast_gradient_method
 from models.fcn import FcnNet
-from examples.adversarial.utils import load_dataset,train,accuarcy
+from examples.utils import load_dataset,train,accuarcy
 
 if __name__ == '__main__':
     dataset_name = 'SyntheticControl'

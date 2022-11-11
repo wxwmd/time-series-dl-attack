@@ -3,7 +3,7 @@ import numpy as np
 
 from attacks.adversarial.cleverhans.whitebox.projected_gradient_descent import projected_gradient_descent
 
-from examples.adversarial.utils import load_dataset, train, accuarcy
+from examples.utils import load_dataset, train, accuarcy
 from models.fcn import FcnNet
 
 if __name__ == '__main__':

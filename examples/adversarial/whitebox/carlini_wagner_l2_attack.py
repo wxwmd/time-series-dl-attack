@@ -2,7 +2,7 @@ import torch
 
 from attacks.adversarial.cleverhans.whitebox.carlini_wagner_l2 import carlini_wagner_l2
 from models.fcn import FcnNet
-from examples.adversarial.utils import load_dataset,train,accuarcy
+from examples.utils import load_dataset,train,accuarcy
 
 if __name__ == '__main__':
     dataset_name = 'SyntheticControl'
