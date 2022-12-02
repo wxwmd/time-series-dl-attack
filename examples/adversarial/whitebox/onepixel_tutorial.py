@@ -2,7 +2,7 @@ import torch
 import torch.nn as nn
 import torch.utils.data as Data
 import torchvision
-from attacks.adversarial.torchattack.whitebox.deepfool import DeepFool
+from attacks.adversarial.torchattack.whitebox.onepixel import OnePixel
 
 from models.CNN import CNN
 
@@ -17,14 +17,14 @@ device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
 
 # 下载mnist手写数据集
 train_data = torchvision.datasets.MNIST(
-    root='./data/',  # 保存或提取的位置  会放在当前文件夹中
+    root='../../../dataset/',  # 保存或提取的位置  会放在当前文件夹中
     train=True,  # true说明是用于训练的数据，false说明是用于测试的数据
     transform=torchvision.transforms.ToTensor(),  # 转换PIL.Image or numpy.ndarray
     download=DOWNLOAD_MNIST,  # 已经下载了就不需要下载了
 )
 
 test_data = torchvision.datasets.MNIST(
-    root='./data/',
+    root='../../../dataset/',
     train=False  # 表明是测试集
 )
 
@@ -78,8 +78,8 @@ accuracy = (pred_y.data == test_y.data).sum() / test_y.shape[0]
 print('test accuracy: %.2f on clean data' % accuracy)
 
 # 使用deepfool攻击样本，验证精确度
-deepfool = DeepFool(cnn, steps=10, overshoot=0.1)
-adv_x = deepfool(test_x, test_y)
+onepixel = OnePixel(cnn,pixels=50)
+adv_x = onepixel(test_x, test_y)
 adv_output = cnn(adv_x)
 adv_pred_y = torch.max(adv_output, 1)[1]
 adv_accuracy = (adv_pred_y.data == test_y.data).sum() / test_y.shape[0]
